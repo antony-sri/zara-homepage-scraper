@@ -1,0 +1,15 @@
+version: "3.9"
+services:
+  db:
+    image: postgres:14
+    restart: always
+    environment:
+      POSTGRES_USER: zara
+      POSTGRES_PASSWORD: zara123
+      POSTGRES_DB: zara_scraper
+    ports:
+      - "5432:5432"
+    volumes:
+      - db_data:/var/lib/postgresql/data
+volumes:
+  db_data:
